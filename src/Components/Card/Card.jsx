@@ -1,16 +1,17 @@
 import React from 'react'
 import { FiDownload } from "react-icons/fi";
 import { FaStar } from "react-icons/fa";
+import { Link } from 'react-router';
 
 export default function Card({data}) {
-    const {image,ratingAvg,downloads}=data;
+    const {image,ratingAvg,downloads,title,id}=data;
   return (
-    <div className='bg-white rounded-md text-start transform transition hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+    <Link to={`/AppDetails/${id}`} className='shadow-sm bg-white rounded-md text-start transform transition hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
          
             <div className='p-4'> 
 
                   <img src={image} alt="" className='rounded-md w-full'/>
-                  <p className='my-3 text-2xl font-semibold'>Forest: Focus for Productivity</p>
+                  <p className='my-3 text-2xl font-semibold'>{title}</p>
                   <div className='flex justify-between'>
 
                         <div className='bg-[#F1F5E8] p-2 rounded-md' >
@@ -21,6 +22,6 @@ export default function Card({data}) {
                         </div>
                   </div>
             </div>
-    </div>
+    </Link>
   )
 }

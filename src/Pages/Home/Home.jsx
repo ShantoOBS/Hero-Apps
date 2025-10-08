@@ -5,6 +5,7 @@ import hero from '../../assets/hero.png'
 
 import Card from '../../Components/Card/Card'
 import { useEffect } from "react";
+import { Link } from 'react-router'
 
 
 
@@ -29,9 +30,9 @@ export default function Home() {
 
 
             <div className='flex gap-4 my-4 text-center'>
-                <button class="btn btn-outline font-bold border-gray-300"><img src={playSotre} alt="" className='w-6 h-6' />Google Play</button>
+                <Link to="https://play.google.com/store/games?device=windows&hl=en" className="btn btn-outline font-bold border-gray-300"><img src={playSotre} alt="" className='w-6 h-6' />Google Play</Link>
 
-                <button class="btn btn-outline font-bold border-gray-300"><img src={apple} alt="" className='w-6 h-6' /> App Store</button>
+                <Link to="https://www.apple.com/store" className="btn btn-outline font-bold border-gray-300"><img src={apple} alt="" className='w-6 h-6' /> App Store</Link>
             </div>
 
             <img src={hero} alt="" className='mt-3' />
@@ -67,12 +68,12 @@ export default function Home() {
             </div>
 
 
-            <div className='my-15 max-w-6xl mx-auto'>
+            <div className='mt-15 max-w-6xl mx-auto'>
 
                 <p className='text-5xl font-bold mb-3'>Trending Apps</p>
                 <p className='text-[#627382] text-2xl '>Explore All Trending Apps on the Market developed by us</p>
 
-                <div className='grid md:grid-cols-3 lg:grid-cols-4 my-8 gap-4'>
+                <div className='grid md:grid-cols-3 lg:grid-cols-4 mt-8 gap-4'>
 
                     {data.map((data, index) => (
                         <Card key={index} data={data} />
@@ -80,7 +81,13 @@ export default function Home() {
 
 
                 </div>
+
+                
             </div>
+
+            <Link to="/App" className='my-8 bg-linear-to-r from-[#632EE3] to-[#9F62F2] px-8 py-2 rounded-md font-semibold text-white flex items-center gap-1 justify-center'> Show All</Link>
+                
+
 
 
         </div>
