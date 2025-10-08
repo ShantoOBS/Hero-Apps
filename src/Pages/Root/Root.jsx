@@ -5,9 +5,14 @@ import Footer from '../../Components/Footer/Footer'
 
 export default function Root() {
   return (
-    <div className='bg-white text-black'>
-        <Navbar></Navbar>
-        <Outlet></Outlet>
+    <div className=' text-black bg-[#f7f2f2]'>
+
+        <div className='bg-white'><Navbar></Navbar></div>
+        
+        
+          <Outlet></Outlet>
+    
+        
         <Footer></Footer>
     </div>
   )
