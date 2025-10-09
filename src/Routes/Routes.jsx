@@ -11,10 +11,13 @@ export const router = createBrowserRouter([
     path: "/",
     element: <Root />,
     errorElement: <ErrorElement />,
+
     children: [
       {
         path: "/",
         element: <Home />,
+        loader: () =>
+          new Promise((resolve) => setTimeout(() => resolve({}), 500)), // optional: loader for Home
       },
       {
         path: "/App",
@@ -30,7 +33,7 @@ export const router = createBrowserRouter([
         path: "/AppDetails/:id",
         loader: () => fetch("/Data.json"),
         element: <AppDetails />,
-      }
-    ]
-  }
+      },
+    ],
+  },
 ]);

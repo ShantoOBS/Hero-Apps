@@ -5,10 +5,13 @@ import image from '../../assets/logo.png';
 
 export default function Loader() {
     return (
-        <div>
-            <Navbar />
+        <div className="text-black bg-[#f7f2f2] " >
 
-            <div className="flex flex-col justify-center items-center h-[90vh]">
+               <div className='bg-white'>
+                    <Navbar />
+                  </div>
+
+            <div className="flex flex-col justify-center items-center h-[60vh]">
                 <p className="flex text-4xl font-bold items-center gap-2 text-gray-400">
                     <span>L</span>
                     <span>O</span>

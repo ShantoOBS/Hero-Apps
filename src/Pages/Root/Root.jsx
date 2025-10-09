@@ -16,7 +16,7 @@ export default function Root() {
 
 
   return (
-    <div className='text-black bg-[#f7f2f2] relative min-h-screen flex flex-col'>
+    <div className='text-black bg-[#f7f2f2] '>
    
       <div className='bg-white'>
         <Navbar />

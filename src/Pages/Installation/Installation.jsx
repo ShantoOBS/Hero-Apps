@@ -9,8 +9,6 @@ export default function Installation() {
 
   const allData = useLoaderData();
   function convertToNumber(value) {
-  if (typeof value !== "string") return value;
-
   const num = parseFloat(value);
   
   return num * 1_000_000;

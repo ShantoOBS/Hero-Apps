@@ -6,7 +6,7 @@ export default function LoaderSearch() {
         <div>
         
 
-            <div className="flex flex-col justify-center items-center h-[90vh]">
+            <div className="flex flex-col justify-center items-center h-[50vh]">
                 <p className="flex text-4xl font-bold items-center gap-2 text-gray-400">
                     <span>L</span>
                     <span>O</span>
