@@ -2,6 +2,7 @@ import React from 'react'
 import { Outlet } from 'react-router'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
+import { ToastContainer } from 'react-toastify';
 
 export default function Root() {
   return (
@@ -14,6 +15,8 @@ export default function Root() {
     
         
         <Footer></Footer>
+
+          <ToastContainer />
     </div>
   )
 }

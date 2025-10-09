@@ -75,18 +75,20 @@ export default function Home() {
 
                 <div className='grid md:grid-cols-3 lg:grid-cols-4 mt-8 gap-4'>
 
-                    {data.map((data, index) => (
-                        <Card key={index} data={data} />
-                    ))}
+                    {
+                        data.slice(0, 8).map((item, index) => (
+                            <Card key={index} data={item} />
+                        ))
+                    }
 
 
                 </div>
 
-                
+
             </div>
 
             <Link to="/App" className='my-8 bg-linear-to-r from-[#632EE3] to-[#9F62F2] px-8 py-2 rounded-md font-semibold text-white flex items-center gap-1 justify-center'> Show All</Link>
-                
+
 
 
 

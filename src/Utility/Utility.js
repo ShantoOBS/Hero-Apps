@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 
 function getData() {
 
@@ -11,7 +12,7 @@ function getData() {
 
 
 function SaveData(id) {
-    alert("item added,,,");
+    toast("Intalling App");
     const oldData = getData();
 
     const currentData = [...oldData, id];
@@ -19,11 +20,9 @@ function SaveData(id) {
 }
 
 function removeData(id) {
-    alert("Unstailling App,,,,");
+    toast("Unstailling App");
     const arr = getData();
-    const curr = arr.filter((d) => d != id);
-
-    const currentData = [...curr, id];
+    const currentData = arr.filter((d) => d != id);
     localStorage.setItem("StoreItem", JSON.stringify(currentData));
 
 }
