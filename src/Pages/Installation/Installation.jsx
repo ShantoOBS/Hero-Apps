@@ -5,7 +5,24 @@ import { useLoaderData } from 'react-router';
 
 export default function Installation() {
   const [InstallApp, setInstallApp] = useState([]);
+  const [sortValue, setSortValue] = useState("Sort By Size"); 
+
   const allData = useLoaderData();
+
+  const handleChange = (e) => {
+    setSortValue(e.target.value); 
+    if(sortValue==="high-low"){
+
+       const arr=InstallApp.sort((a,b)=>a.size-b.size);
+       setInstallApp(arr);
+
+    }else{
+
+       const arr=InstallApp.sort((a,b)=>b.size-a.size);
+       setInstallApp(arr);
+
+    }
+  };
 
   useEffect(() => {
     const local = getData();
@@ -26,13 +43,21 @@ export default function Installation() {
 
       <div className='flex justify-between items-center mb-6'>
         <p className='font-bold'>{InstallApp.length} Apps Found</p>
-        <select defaultValue="Sort By Size" className="p-2 border-1 border-gray-300 rounded-md">
-          <option disabled={true}>Sort By Size</option>
-          <option>Inter</option>
-          <option>Poppins</option>
-          <option>Raleway</option>
-        </select>
+
+       <select
+        value={sortValue}         
+        onChange={handleChange}    
+        className="p-2 border-1 border-gray-300 rounded-md font-bold"
+      >
+        <option disabled>Sort By Size</option>
+        <option value="high-low">High-Low</option>
+        <option value="low-high">Low-High</option>
+      </select>
       </div>
+
+       <div className='border-1 border-gray-200 my-5'></div>
+
+
 
       <div>
         {InstallApp.map((data) => (
