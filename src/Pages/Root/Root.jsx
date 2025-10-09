@@ -16,7 +16,7 @@ export default function Root() {
         
         <Footer></Footer>
 
-          <ToastContainer />
+         <ToastContainer />
     </div>
   )
 }

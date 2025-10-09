@@ -1,6 +1,7 @@
 import React from 'react';
 import { removeData } from '../../Utility/Utility';
-
+import { FiDownload } from "react-icons/fi";
+import { FaStar } from "react-icons/fa6";
 export default function IntallationCard({ data, onUninstall }) {
   const { image, title, size, ratingAvg, downloads, id } = data;
 
@@ -19,8 +20,8 @@ export default function IntallationCard({ data, onUninstall }) {
         <div>
           <p className='text-2xl font-medium'>{title}</p>
           <div className='flex gap-3'>
-            <p className='text-green-400'>{downloads}</p>
-            <p className='text-yellow-400'>{ratingAvg}</p>
+            <p className='text-green-400 flex gap-1 items-center'><FiDownload /> {downloads}</p>
+            <p className='text-yellow-400 flex gap-1 items-center'><FaStar /> {ratingAvg}</p>
             <p>{size} MB</p>
           </div>
         </div>

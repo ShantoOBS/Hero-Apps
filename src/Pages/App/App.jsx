@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLoaderData } from 'react-router';
 import Card from '../../Components/Card/Card';
+import CardNotFound from '../../Components/Error/CardNotFound';
 
 export default function App() {
   const [Data, setData] = useState([]);
@@ -14,9 +15,10 @@ export default function App() {
   const filteredData = Data.filter((item) =>
     item.title.toLowerCase().includes(search.toLowerCase())
   );
-
+  if(filteredData.length==0)return (<CardNotFound/>)
   return (
-    <div className='max-w-6xl mx-auto px-2 text-center'>
+    
+      <div className='max-w-6xl mx-auto px-2 text-center'>
       <div className='my-10'>
         <p className='text-5xl font-bold mb-3'>Our All Applications</p>
         <p>Explore All Apps on the Market developed by us. We code for Millions</p>
