@@ -8,17 +8,24 @@ export default function Installation() {
   const [sortValue, setSortValue] = useState("Sort By Size"); 
 
   const allData = useLoaderData();
+  function convertToNumber(value) {
+  if (typeof value !== "string") return value;
 
+  const num = parseFloat(value);
+  
+  return num * 1_000_000;
+
+}
   const handleChange = (e) => {
     setSortValue(e.target.value); 
     if(sortValue==="high-low"){
 
-       const arr=InstallApp.sort((a,b)=>a.size-b.size);
+       const arr=InstallApp.sort((a,b)=>convertToNumber(a.downloads)-convertToNumber(b.downloads));
        setInstallApp(arr);
 
     }else{
 
-       const arr=InstallApp.sort((a,b)=>b.size-a.size);
+       const arr=InstallApp.sort((a,b)=>convertToNumber(b.downloads)-convertToNumber(a.downloads));
        setInstallApp(arr);
 
     }
@@ -59,7 +66,7 @@ export default function Installation() {
 
 
 
-      <div>
+      <div className=''>
         {InstallApp.map((data) => (
           <IntallationCard
             key={data.id}
