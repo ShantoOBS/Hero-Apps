@@ -93,7 +93,7 @@
 <h2>🚀 Deployment</h2>
 <p>
   Deployed on <strong>Vercel / Netlify / Cloudflare</strong><br>
-  🔗 <a href="hero-apps222.netlify.app" target="_blank">Live Demo Link</a>
+  🔗 <a href="https://hero-apps222.netlify.app/" target="_blank">Live Demo Link</a>
 </p>
 
 <h2>🧑‍💻 Developer</h2>
