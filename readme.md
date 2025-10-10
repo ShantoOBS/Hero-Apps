@@ -107,7 +107,7 @@
 <h2>🪄 How to Run Locally</h2>
 <pre>
 git clone https://github.com/ShantoOBS/Hero-Apps.git
-cd hero-io
+cd Hero-Apps
 npm install
 npm run dev
 </pre>
